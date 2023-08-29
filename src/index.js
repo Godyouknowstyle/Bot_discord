@@ -1,7 +1,3 @@
-//คำสั่งพื้นฐาน Bot discord 
-//ไว้สำหรับเป็นตัวอย่างในการทำให้บอทขึ้นออนนะครับ
-
-
 require('dotenv').config();
 const {Client, GatewayIntentBits, EmbedBuilder, SlashCommandBuilder, PermissionsBitField, ActivityType, Permissions} = require('discord.js');
 const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]});
@@ -9,9 +5,9 @@ const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits
 client.on("ready", (x) => {
     console.log(`${x.user.tag} is ready!`);
     client.user.setActivity({
-        name: 'PG Slot',
+        name: 'Quarxnt1ne',
         type: ActivityType.Streaming, 
-        url: 'https://www.youtube.com/watch?v=tYPIR8XWXFE&list=RDtYPIR8XWXFE&start_radio=1' 
+        url: 'https://www.twitch.tv/poyeunha'
     });
 
     const ping = new SlashCommandBuilder()
@@ -20,7 +16,7 @@ client.on("ready", (x) => {
 
     const hello = new SlashCommandBuilder()
     .setName ('hello')
-    .setDescription('This is a hello Command!');
+    .setDescription('This is a hello Command now!');
 
     const bye = new SlashCommandBuilder()
     .setName ('bye')
@@ -34,16 +30,14 @@ client.on("ready", (x) => {
 client.on('interactionCreate', (interaction) => {
     if(!interaction.isChatInputCommand()) return;
     if(interaction.commandName==='ping') {
-        interaction.reply('ละมึงเป็นควยอะไรอะ อย่าใช้งานได้ป่ะ กูยังทำระบบไม่เสร็จ!');
+        interaction.reply('ตอนนี้กำลังพัฒนาระบบ อาจจะยังใช้งานไม่ได้นะครับ!');
     }
     if(interaction.commandName==='hello') {
-        interaction.reply('สวัสดี ผมมิ๊กกี้เม้าส์ จะมาเล่นหน้าพ่อมึง!');
+        interaction.reply('สวัสดีท่านที่จะใช้คำสั่งบอทตัวนี้ บอทตัวนี้กำลังพัฒนา ให้ท่านรอสักหน่อย รอว่างจะมาทำนะครับ!');
     }
     if(interaction.commandName==='bye') {
-        interaction.reply('ไว้เจอกันนะไอ้เด็กเหี้ย!');
+        interaction.reply('ไว้เจอกันนะครับ!');
     }
 });
 
 client.login(process.env.TOKEN);
-
-//ขออนุญาตนอนก่อนแล้วกัน 
