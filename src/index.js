@@ -5,7 +5,7 @@ const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits
 client.on("ready", (x) => {
     console.log(`${x.user.tag} is ready!`);
     client.user.setActivity({
-        name: 'Quarxnt1ne',
+        name: 'Testing Bot',
         type: ActivityType.Streaming, 
         url: 'https://www.twitch.tv/poyeunha'
     });
